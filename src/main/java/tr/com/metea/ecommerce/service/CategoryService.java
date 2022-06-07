@@ -8,5 +8,5 @@ import tr.com.metea.ecommerce.dto.CategoryWriteDTO;
  * @author Mete Aydin
  * @since 7.06.2022
  */
-public interface CategoryService extends BaseService<Category, CategoryWriteDTO, CategorySearchCriteriaDTO>{
+public interface CategoryService extends BaseService<Category, CategoryWriteDTO, CategorySearchCriteriaDTO> {
 }

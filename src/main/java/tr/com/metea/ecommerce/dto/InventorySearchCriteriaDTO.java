@@ -1,8 +1,6 @@
 package tr.com.metea.ecommerce.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import tr.com.metea.ecommerce.domain.Category;
+import tr.com.metea.ecommerce.domain.Inventory;
 import tr.com.metea.ecommerce.util.SearchCriteria;
 import tr.com.metea.ecommerce.util.SearchCriteriaOptions;
 
@@ -10,14 +8,11 @@ import tr.com.metea.ecommerce.util.SearchCriteriaOptions;
  * @author Mete Aydin
  * @since 7.06.2022
  */
-@Getter
-@Setter
-public class CategorySearchCriteriaDTO extends CategoryReadDTO implements BaseSearchCriteriaDTO<Category> {
+public class InventorySearchCriteriaDTO extends InventoryReadDTO implements BaseSearchCriteriaDTO<Inventory> {
     @Override
-    public SearchCriteriaOptions<Category> criteriaFieldMapper() {
-        final var searchCriteriaOptions = new SearchCriteriaOptions<Category>();
-        searchCriteriaOptions.add(new SearchCriteria("name", this.getName(), SearchCriteria.SearchOperation.LIKE));
-        searchCriteriaOptions.add(new SearchCriteria("description", this.getDescription(), SearchCriteria.SearchOperation.LIKE));
+    public SearchCriteriaOptions<Inventory> criteriaFieldMapper() {
+        final var searchCriteriaOptions = new SearchCriteriaOptions<Inventory>();
+        searchCriteriaOptions.add(new SearchCriteria("quantity", this.getQuantity(), SearchCriteria.SearchOperation.EQUAL));
 
         searchCriteriaOptions.add(new SearchCriteria("id", this.getId(), SearchCriteria.SearchOperation.EQUAL));
         searchCriteriaOptions.add(new SearchCriteria("creUser", this.getCreUser(), SearchCriteria.SearchOperation.EQUAL));

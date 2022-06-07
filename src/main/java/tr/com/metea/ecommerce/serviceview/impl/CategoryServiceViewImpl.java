@@ -19,7 +19,6 @@ import tr.com.metea.ecommerce.serviceview.CategoryServiceView;
 public class CategoryServiceViewImpl
         extends BaseServiceViewImpl<CategoryReadDTO, CategoryWriteDTO, Category, CategorySearchCriteriaDTO, CategoryService>
         implements CategoryServiceView {
-
     private final ModelMapper modelMapper;
 
     @Override

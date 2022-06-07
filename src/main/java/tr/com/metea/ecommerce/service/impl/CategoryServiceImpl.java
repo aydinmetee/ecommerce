@@ -19,7 +19,6 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category, CategoryWrite
         implements CategoryService {
 
     private final ModelMapper modelMapper;
-
     @Override
     public Category convertToEntity(CategoryWriteDTO dto) {
         return modelMapper.map(dto, Category.class);

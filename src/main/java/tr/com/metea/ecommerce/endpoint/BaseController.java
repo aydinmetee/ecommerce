@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import tr.com.metea.ecommerce.serviceview.BaseServiceView;
 
@@ -11,11 +12,12 @@ import tr.com.metea.ecommerce.serviceview.BaseServiceView;
  * @author Mete Aydin
  * @since 7.06.2022
  */
+@Component
 public abstract class BaseController<ENTITY, READ, WRITE, SEARCH,
         SERVICE extends BaseServiceView<ENTITY, READ, WRITE, SEARCH>> {
 
     @Autowired
-    SERVICE service;
+    protected SERVICE service;
 
     @PostMapping
     public ResponseEntity<READ> create(@RequestBody WRITE dto) {

@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Component;
 import tr.com.metea.ecommerce.dto.BaseSearchCriteriaDTO;
 import tr.com.metea.ecommerce.exception.ServiceExecutionException;
 import tr.com.metea.ecommerce.service.BaseService;
@@ -13,11 +14,12 @@ import tr.com.metea.ecommerce.service.BaseService;
  * @author Mete Aydin
  * @since 7.06.2022
  */
+@Component
 public abstract class BaseServiceImpl<E, W, S extends BaseSearchCriteriaDTO<E>, R extends JpaRepository<E, String> & JpaSpecificationExecutor<E>>
         implements BaseService<E, W, S> {
 
-    @Autowired
-    R repository;
+    @Autowired()
+    protected R repository;
 
     public E create(W dto) {
         return repository.save(convertToEntity(dto));

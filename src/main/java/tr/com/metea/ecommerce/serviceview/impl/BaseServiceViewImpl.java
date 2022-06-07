@@ -3,6 +3,7 @@ package tr.com.metea.ecommerce.serviceview.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
 import tr.com.metea.ecommerce.service.BaseService;
 import tr.com.metea.ecommerce.serviceview.BaseServiceView;
 
@@ -10,12 +11,13 @@ import tr.com.metea.ecommerce.serviceview.BaseServiceView;
  * @author Mete Aydin
  * @since 7.06.2022
  */
+@Component
 public abstract class BaseServiceViewImpl<READ, WRITE, ENTITY, SEARCH, SERVICE
         extends BaseService<ENTITY, WRITE, SEARCH>>
         implements BaseServiceView<ENTITY, READ, WRITE, SEARCH> {
 
     @Autowired
-    SERVICE service;
+    protected SERVICE service;
 
     public READ create(WRITE dto) {
         return convertToDTO(service.create(dto));
