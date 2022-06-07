@@ -15,11 +15,14 @@ import tr.com.metea.ecommerce.service.BaseService;
  * @since 7.06.2022
  */
 @Component
-public abstract class BaseServiceImpl<E, W, S extends BaseSearchCriteriaDTO<E>, R extends JpaRepository<E, String> & JpaSpecificationExecutor<E>>
+public abstract class BaseServiceImpl<E, W, S extends BaseSearchCriteriaDTO<E>>
         implements BaseService<E, W, S> {
 
     @Autowired()
-    protected R repository;
+    protected JpaRepository<E, String> repository;
+
+    @Autowired()
+    protected JpaSpecificationExecutor<E> specificationExecutor;
 
     public E create(W dto) {
         return repository.save(convertToEntity(dto));
@@ -45,7 +48,7 @@ public abstract class BaseServiceImpl<E, W, S extends BaseSearchCriteriaDTO<E>, 
     }
 
     public Page<E> search(S criteria, Pageable pageable) {
-        return repository.findAll(criteria.criteriaFieldMapper(), pageable);
+        return specificationExecutor.findAll(criteria.criteriaFieldMapper(), pageable);
     }
 
     // This Function Must Be Writen.

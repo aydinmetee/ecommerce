@@ -7,7 +7,6 @@ import tr.com.metea.ecommerce.domain.Inventory;
 import tr.com.metea.ecommerce.dto.InventoryReadDTO;
 import tr.com.metea.ecommerce.dto.InventorySearchCriteriaDTO;
 import tr.com.metea.ecommerce.dto.InventoryWriteDTO;
-import tr.com.metea.ecommerce.serviceview.InventoryServiceView;
 
 /**
  * @author Mete Aydin
@@ -17,5 +16,5 @@ import tr.com.metea.ecommerce.serviceview.InventoryServiceView;
 @RequestMapping("/inventory")
 @Api(value = "/inventory")
 public class InventoryController extends
-        BaseController<Inventory, InventoryReadDTO, InventoryWriteDTO, InventorySearchCriteriaDTO, InventoryServiceView> {
+        BaseController<Inventory, InventoryReadDTO, InventoryWriteDTO, InventorySearchCriteriaDTO> {
 }

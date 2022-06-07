@@ -12,12 +12,11 @@ import tr.com.metea.ecommerce.serviceview.BaseServiceView;
  * @since 7.06.2022
  */
 @Component
-public abstract class BaseServiceViewImpl<READ, WRITE, ENTITY, SEARCH, SERVICE
-        extends BaseService<ENTITY, WRITE, SEARCH>>
+public abstract class BaseServiceViewImpl<READ, WRITE, ENTITY, SEARCH>
         implements BaseServiceView<ENTITY, READ, WRITE, SEARCH> {
 
     @Autowired
-    protected SERVICE service;
+    protected BaseService<ENTITY, WRITE, SEARCH> service;
 
     public READ create(WRITE dto) {
         return convertToDTO(service.create(dto));

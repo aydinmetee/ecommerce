@@ -7,7 +7,6 @@ import tr.com.metea.ecommerce.domain.Category;
 import tr.com.metea.ecommerce.dto.CategoryReadDTO;
 import tr.com.metea.ecommerce.dto.CategorySearchCriteriaDTO;
 import tr.com.metea.ecommerce.dto.CategoryWriteDTO;
-import tr.com.metea.ecommerce.serviceview.CategoryServiceView;
 
 /**
  * @author Mete Aydin
@@ -17,5 +16,5 @@ import tr.com.metea.ecommerce.serviceview.CategoryServiceView;
 @RequestMapping("/category")
 @Api(value = "/category")
 public class CategoryController extends
-        BaseController<Category, CategoryReadDTO, CategoryWriteDTO, CategorySearchCriteriaDTO, CategoryServiceView> {
+        BaseController<Category, CategoryReadDTO, CategoryWriteDTO, CategorySearchCriteriaDTO> {
 }

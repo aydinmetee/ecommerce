@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import tr.com.metea.ecommerce.domain.Category;
 import tr.com.metea.ecommerce.dto.CategorySearchCriteriaDTO;
 import tr.com.metea.ecommerce.dto.CategoryWriteDTO;
-import tr.com.metea.ecommerce.repository.CategoryRepository;
 import tr.com.metea.ecommerce.service.CategoryService;
 
 /**
@@ -15,10 +14,11 @@ import tr.com.metea.ecommerce.service.CategoryService;
  */
 @Service
 @RequiredArgsConstructor
-public class CategoryServiceImpl extends BaseServiceImpl<Category, CategoryWriteDTO, CategorySearchCriteriaDTO, CategoryRepository>
+public class CategoryServiceImpl extends BaseServiceImpl<Category, CategoryWriteDTO, CategorySearchCriteriaDTO>
         implements CategoryService {
 
     private final ModelMapper modelMapper;
+
     @Override
     public Category convertToEntity(CategoryWriteDTO dto) {
         return modelMapper.map(dto, Category.class);

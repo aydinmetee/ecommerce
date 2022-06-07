@@ -7,7 +7,6 @@ import tr.com.metea.ecommerce.domain.Inventory;
 import tr.com.metea.ecommerce.dto.InventoryReadDTO;
 import tr.com.metea.ecommerce.dto.InventorySearchCriteriaDTO;
 import tr.com.metea.ecommerce.dto.InventoryWriteDTO;
-import tr.com.metea.ecommerce.service.InventoryService;
 import tr.com.metea.ecommerce.serviceview.InventoryServiceView;
 
 /**
@@ -17,7 +16,7 @@ import tr.com.metea.ecommerce.serviceview.InventoryServiceView;
 @Service
 @RequiredArgsConstructor
 public class InventoryServiceViewImpl extends
-        BaseServiceViewImpl<InventoryReadDTO, InventoryWriteDTO, Inventory, InventorySearchCriteriaDTO, InventoryService>
+        BaseServiceViewImpl<InventoryReadDTO, InventoryWriteDTO, Inventory, InventorySearchCriteriaDTO>
         implements InventoryServiceView {
 
     private final ModelMapper modelMapper;

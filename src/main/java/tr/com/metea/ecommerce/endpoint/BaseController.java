@@ -13,11 +13,10 @@ import tr.com.metea.ecommerce.serviceview.BaseServiceView;
  * @since 7.06.2022
  */
 @Component
-public abstract class BaseController<ENTITY, READ, WRITE, SEARCH,
-        SERVICE extends BaseServiceView<ENTITY, READ, WRITE, SEARCH>> {
+public abstract class BaseController<ENTITY, READ, WRITE, SEARCH> {
 
     @Autowired
-    protected SERVICE service;
+    protected BaseServiceView<ENTITY, READ, WRITE, SEARCH> service;
 
     @PostMapping
     public ResponseEntity<READ> create(@RequestBody WRITE dto) {

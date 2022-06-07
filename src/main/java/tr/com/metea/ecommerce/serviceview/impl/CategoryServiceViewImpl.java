@@ -7,7 +7,6 @@ import tr.com.metea.ecommerce.domain.Category;
 import tr.com.metea.ecommerce.dto.CategoryReadDTO;
 import tr.com.metea.ecommerce.dto.CategorySearchCriteriaDTO;
 import tr.com.metea.ecommerce.dto.CategoryWriteDTO;
-import tr.com.metea.ecommerce.service.CategoryService;
 import tr.com.metea.ecommerce.serviceview.CategoryServiceView;
 
 /**
@@ -17,7 +16,7 @@ import tr.com.metea.ecommerce.serviceview.CategoryServiceView;
 @Service
 @RequiredArgsConstructor
 public class CategoryServiceViewImpl
-        extends BaseServiceViewImpl<CategoryReadDTO, CategoryWriteDTO, Category, CategorySearchCriteriaDTO, CategoryService>
+        extends BaseServiceViewImpl<CategoryReadDTO, CategoryWriteDTO, Category, CategorySearchCriteriaDTO>
         implements CategoryServiceView {
     private final ModelMapper modelMapper;
 
