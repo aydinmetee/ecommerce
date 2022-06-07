@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import tr.com.metea.ecommerce.domain.Inventory;
 import tr.com.metea.ecommerce.dto.InventorySearchCriteriaDTO;
 import tr.com.metea.ecommerce.dto.InventoryWriteDTO;
+import tr.com.metea.ecommerce.service.InventoryService;
 
 /**
  * @author Mete Aydin
@@ -14,7 +15,7 @@ import tr.com.metea.ecommerce.dto.InventoryWriteDTO;
 @Service
 @RequiredArgsConstructor
 public class InventoryServiceImpl extends
-        BaseServiceImpl<Inventory, InventoryWriteDTO, InventorySearchCriteriaDTO> {
+        BaseServiceImpl<Inventory, InventoryWriteDTO, InventorySearchCriteriaDTO> implements InventoryService {
     private final ModelMapper modelMapper;
 
     @Override
